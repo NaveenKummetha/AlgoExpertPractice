@@ -5,11 +5,12 @@ import java.util.Map;
 import java.util.TreeMap;
 import java.util.stream.Collectors;
 
-public class MorganStanley {
+public class SorttheSummary {
 	public static void main(String[] args) {
 		var helo = groupSort(List.of(3, 3, 1, 2, 1));
 		System.out.println(helo);
 	}
+	
 
 	public static List<List<Integer>> groupSort(List<Integer> arr) {
 		// This kind of map is keeping the order of the keys by their natural order.
@@ -19,13 +20,9 @@ public class MorganStanley {
 		// already.
 		// else, increase the value at map[key] by one
 		for (Integer currInt : arr) {
-			if (map.containsKey(currInt)) {
-				int currValue = map.get(currInt);
-				map.replace(currInt, currValue + 1);
-			} else
-				map.put(currInt, 1);
+			map.put(currInt, map.getOrDefault(currInt, 0) + 1);
 		}
-		// The next 7 lines is for sorting the map by VALUE
+		// The next lines is for sorting the map by VALUE
 		List<Map.Entry<Integer, Integer>> list = new LinkedList<>(map.entrySet());
 		Collections.sort(list, (o1, o2) -> o2.getValue().compareTo(o1.getValue()));
 		// Now after the map is sorted, create 2-dimesional ArrayList and insert pairs
