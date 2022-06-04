@@ -21,3 +21,13 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+AlgoExpert/.classpath
+AlgoExpert/.project
+AlgoExpert/.settings/org.eclipse.jdt.core.prefs
+*.prefs
+*.class
+*.class
+AlgoExpert/target/classes/com/algo/expert/practice/arrays/_13FirstDuplicateValue.class
+*.class
+*.MF
+*.prefs
